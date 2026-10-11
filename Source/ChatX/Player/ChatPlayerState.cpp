@@ -1,7 +1,7 @@
 ﻿#include "Player/ChatPlayerState.h"
 #include "Net/UnrealNetwork.h"
 
-AChatPlayerState::AChatPlayerState() : PlayerNameString(TEXT("None")), CurrentGuessCount(0), MaxGuessCount(5)
+AChatPlayerState::AChatPlayerState() : PlayerNameString(TEXT("None")), CurrentGuessCount(0), MaxGuessCount(3)
 {
 	bReplicates = true;
 }

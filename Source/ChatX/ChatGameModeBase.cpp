@@ -218,5 +218,20 @@ void AChatGameModeBase::JudgeGame(AChatPlayerController* InChattingPlayerControl
 				ResetGame();
 			}
 		}
+		else
+		{
+			FTimerHandle NoticeTimerHandle;
+
+			ChangeNoticeText(FText::FromString(TEXT("That is not the answer.Try again.")));
+			GetWorldTimerManager().SetTimer(NoticeTimerHandle, [this]() { ChangeNoticeText(FText::FromString(TEXT("Entering the answer..."))); }, 3.0f, false);
+		}
+	}
+}
+
+void AChatGameModeBase::ChangeNoticeText(FText NoticeText)
+{
+	for (const auto& ChatPlayerController : AllPlayerControllers)
+	{
+		ChatPlayerController->NotificationText = NoticeText;
 	}
 }

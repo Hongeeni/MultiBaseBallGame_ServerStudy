@@ -25,6 +25,8 @@ public:
 	void ResetGame();
 	void JudgeGame(AChatPlayerController* InChattingPlayerController, int InStrikeCount);
 
+	void ChangeNoticeText(FText NoticeText);
+
 protected:
 	FString SecretNumberString;
 	TArray<TObjectPtr<AChatPlayerController>> AllPlayerControllers;
